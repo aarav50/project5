@@ -119,7 +119,7 @@ function search(arr1,arr2){
     for (let i = 0; i<arr1.length;i++){
         for (let ii = 0; ii<arr2.length;ii++){
             if (`${arr1[i]}`==`${arr2[ii]}`){
-                return [arr1[i]]
+                return arr2[ii]
             }
         }
 
@@ -201,6 +201,7 @@ function maingame(){
   if (score%5==0){
     hazards.push((feeder()))
   }
+  
   speed=speed-1
     
     }
@@ -249,6 +250,6 @@ document.querySelector("#slider").addEventListener("input",speedfunc)
 document.querySelector("#slider").value=0
 scoretext.innerText="Score is 0"
 document.body.appendChild(scoretext)
-storage.push(root.row,root.col)
+storage.push([root.row,root.col])
 food.push(feeder())
 rootinterval = setInterval(maingame, speed)
