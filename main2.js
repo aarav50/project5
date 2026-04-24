@@ -6,7 +6,7 @@ var speed = 200
 var direction = [0, 1]
 var score = 0
 var root
-var gameinterval
+var rootinterval
 class snakeHead {
     constructor(row, col) {
         this.row = row
@@ -87,23 +87,23 @@ function overlaoanykzier(arr){
 function velocity(event) {
     if (event.key == "ArrowLeft") {
         direction = [0, -1]
-        clearInterval(gameinterval)
-        gameinterval = setInterval(maingame, speed)
+        clearInterval(rootinterval)
+        rootinterval = setInterval(maingame, speed)
     }
     else if (event.key == "ArrowRight") {
         direction = [0, 1]
-        clearInterval(gameinterval)
-        gameinterval = setInterval(maingame, speed)
+        clearInterval(rootinterval)
+        rootinterval = setInterval(maingame, speed)
     }
     else if (event.key == "ArrowDown") {
         direction = [1, 0]
-        clearInterval(gameinterval)
-        gameinterval = setInterval(maingame, speed)
+        clearInterval(rootinterval)
+        rootinterval = setInterval(maingame, speed)
 
     } else if (event.key == "ArrowUp") {
         direction = [-1, 0]
-        clearInterval(gameinterval)
-        gameinterval = setInterval(maingame, speed)
+        clearInterval(rootinterval)
+        rootinterval = setInterval(maingame, speed)
     }
 
 }
@@ -243,4 +243,4 @@ document.body.appendChild(scoretext)
 storage.push(root.row,root.col)
 console.log(feeder())
 food.push(feeder())
-gameinterval = setInterval(maingame, speed)
+rootinterval = setInterval(maingame, speed)
