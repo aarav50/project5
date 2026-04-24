@@ -1,0 +1,40 @@
+.mainclass1{
+    background-color: black;
+    width:  calc(100vh / 30);
+    height:  calc(100vh / 30);
+}
+.mainclass2{
+    display: flex;
+    flex-direction:row;
+
+}
+.mainclass3{
+    background-color: green;
+    width:  calc(100vh / 30);
+    height:  calc(100vh / 30);
+}
+.mainclass4{
+    background-color: rgb(68, 0, 255);
+    width:  calc(100vh / 30);
+    height:  calc(100vh / 30);
+}
+.mainclass6{
+    background-color:red;
+    width:  calc(100vh / 30);
+    height:  calc(100vh / 30);
+}
+.mainclass5{
+    background-image:url("snake.png");
+    width:  calc(100vh / 30);
+    height:  calc(100vh / 30);
+    background-size: 100% 100%;
+    
+}
+body {     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    text-align: center;
+}
