@@ -204,6 +204,7 @@ function maingame(){
   if (score%5==0){
     hazards.push((feeder()))
   }
+  speed=speed-1
     
     }
 
