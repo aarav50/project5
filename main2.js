@@ -68,11 +68,8 @@ function overlaoanykzier(arr){
     
     for (let i = 0; i<arr.length; i++ ){
         let temp = [...arr]
-        console.log(temp)
         temp.splice(i,1)
-        console.log(temp,i)
         for (let ii = 0; ii<temp.length; ii++ ){
-            console.log(arr[i],temp[ii])
             if (`${arr[i]}`==`${temp[ii]}`){
                 return true
             }
@@ -213,6 +210,13 @@ function maingame(){
     
 
 }
+function speedfunc(event){
+    let temp = +`${document.querySelector("#slider").value}`
+    console.log(temp)
+    speed=200-temp
+    clearInterval(rootinterval)
+    rootinterval = setInterval(maingame, speed)
+}
 document.addEventListener("keydown", velocity)
 var min = Math.min([window.innerWidth/30,window.innerHeight/30])
 for (let i = 0; i < 20; i++) {
@@ -238,10 +242,13 @@ var root = new snakeHead (feeder()[0],feeder()[1])
 var scoretext = document.createElement("H1")
 
 
-
+var slider = document.createElement("div")
+slider.innerHTML='<h1> difficulty level</h1><input type="range" id="slider" min=0 max = 199>'
+document.body.appendChild(slider)
+document.querySelector("#slider").addEventListener("input",speedfunc)
+document.querySelector("#slider").value=0
 scoretext.innerText="Score is 0"
 document.body.appendChild(scoretext)
 storage.push(root.row,root.col)
-console.log(feeder())
 food.push(feeder())
 rootinterval = setInterval(maingame, speed)
