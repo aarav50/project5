@@ -85,22 +85,22 @@ function overlaoanykzier(arr){
 
 }
 function velocity(event) {
-    if (event.key == "ArrowLeft") {
+    if (event.key == "ArrowLeft" && direction[1]==0) {
         direction = [0, -1]
         clearInterval(rootinterval)
         rootinterval = setInterval(maingame, speed)
     }
-    else if (event.key == "ArrowRight") {
+    else if (event.key == "ArrowRight" && direction[1]==0) {
         direction = [0, 1]
         clearInterval(rootinterval)
         rootinterval = setInterval(maingame, speed)
     }
-    else if (event.key == "ArrowDown") {
+    else if (event.key == "ArrowDown" && direction[0]==0) {
         direction = [1, 0]
         clearInterval(rootinterval)
         rootinterval = setInterval(maingame, speed)
 
-    } else if (event.key == "ArrowUp") {
+    } else if (event.key == "ArrowUp" && direction[0]==0) {
         direction = [-1, 0]
         clearInterval(rootinterval)
         rootinterval = setInterval(maingame, speed)
